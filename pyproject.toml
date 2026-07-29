@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TensorRecommendationSystem"
+version = "0.1.0"
+description = "Context-Aware Recommendation System using Higher Order SVD (HOSVD) and Tucker Decomposition"
+readme = "README.md"
+authors = [
+  { name = "Sheila Gallardo Redondo" }
+]
+license = { text = "MIT" }
+keywords = ["recommender-system", "tensor-decomposition", "hosvd", "tucker-decomposition", "context-aware"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "pandas>=1.3.0",
+    "scipy>=1.7.0",
+]
+
+[project.optional-dependencies]
+mlsvd = ["pytensorlab"]
+
+[project.urls]
+Homepage = "https://github.com/sheilagr/TensorRecommendationSystem"
+Repository = "https://github.com/sheilagr/TensorRecommendationSystem"
