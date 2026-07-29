@@ -4,6 +4,7 @@ Tucker/HOSVD model for Context-Aware Recommendation.
 Computes the Tucker decomposition R = G x1 U x2 V x3 W and contextual
 subspace projections for recommendation.
 """
+import warnings
 import numpy as np
 import scipy.linalg
 
@@ -46,7 +47,13 @@ class TuckerRecommender:
             3D numpy array of shape (m, n, l) representing the rating tensor.
         """
         if tl is None:
-            # Fallback for environments where pytensorlab is not installed
+            warnings.warn(
+                "pytensorlab is not installed. Entering fallback mode with random placeholder values "
+                "for item/context factors. To compute exact HOSVD decompositions, install pytensorlab "
+                "via: pip install pytensorlab",
+                UserWarning,
+                stacklevel=2
+            )
             U, s, Vt = scipy.linalg.svd(R.reshape(R.shape[0], -1), full_matrices=False)
             self.factor_user_ = U[:, :self.rank_user]
             self.factor_item_ = np.random.rand(R.shape[1], self.rank_item)
