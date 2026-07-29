@@ -20,7 +20,7 @@ It is provided so that every result in the thesis can be reproduced and verified
 
 ###  macOS (using Homebrew)
 
-1. **Install Python 3 via Homebrew**:
+1. **Install Python 3 & Git via Homebrew**:
    ```bash
    brew install python git
    ```
@@ -67,10 +67,24 @@ It is provided so that every result in the thesis can be reproduced and verified
    source venv/bin/activate
    ```
 
-3. **Install dependencies and run**:
+3. **Install dependencies**:
    ```bash
    pip install -r requirements.txt
+   ```
+
+4. **Run unit tests**:
+   ```bash
+   python -m unittest TensorRecommendationSystem.tests
+   ```
+
+5. **Run the Chapter 4 usage example**:
+   ```bash
    python usage_example.py
+   ```
+
+6. **Open the Jupyter notebook**:
+   ```bash
+   jupyter notebook hosvd_practical.ipynb
    ```
 
 ---
@@ -81,16 +95,30 @@ It is provided so that every result in the thesis can be reproduced and verified
    - Download Python 3 from [python.org](https://www.python.org/downloads/) (check **"Add Python to PATH"**).
    - Download Git from [git-scm.com](https://git-scm.com/).
 
-2. **Create and activate a virtual environment in PowerShell / Command Prompt**:
+2. **Create and activate a virtual environment**:
    ```cmd
    python -m venv venv
    venv\Scripts\activate
    ```
 
-3. **Install dependencies and run**:
+3. **Install dependencies**:
    ```cmd
    pip install -r requirements.txt
+   ```
+
+4. **Run unit tests**:
+   ```cmd
+   python -m unittest TensorRecommendationSystem.tests
+   ```
+
+5. **Run the Chapter 4 usage example**:
+   ```cmd
    python usage_example.py
+   ```
+
+6. **Open the Jupyter notebook**:
+   ```cmd
+   jupyter notebook hosvd_practical.ipynb
    ```
 
 ---
